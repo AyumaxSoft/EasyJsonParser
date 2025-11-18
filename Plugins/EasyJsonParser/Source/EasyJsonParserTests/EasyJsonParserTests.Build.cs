@@ -9,7 +9,6 @@ public class EasyJsonParserTests : ModuleRules
 		(ReadOnlyTargetRules Target) : base(Target)
 	{
 		PCHUsage = ModuleRules.PCHUsageMode.UseExplicitOrSharedPCHs;
-		ShadowVariableWarningLevel = WarningLevel.Warning;
 		bEnableExceptions = true;
 
 		PublicDependencyModuleNames.AddRange(
