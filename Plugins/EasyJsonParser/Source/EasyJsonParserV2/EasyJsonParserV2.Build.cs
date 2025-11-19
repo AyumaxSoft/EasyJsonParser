@@ -8,9 +8,6 @@ public class EasyJsonParserV2 : ModuleRules
 	{
 		PCHUsage = ModuleRules.PCHUsageMode.UseExplicitOrSharedPCHs;
 		
-		// Latest C++ features for better optimization
-		CppStandard = CppStandardVersion.Latest;
-		
 		// Enable exceptions for proper error handling
 		bEnableExceptions = true;
 		

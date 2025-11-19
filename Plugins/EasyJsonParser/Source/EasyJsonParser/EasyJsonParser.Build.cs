@@ -7,7 +7,6 @@ public class EasyJsonParser : ModuleRules
 	public EasyJsonParser(ReadOnlyTargetRules Target) : base(Target)
 	{
 		PCHUsage = PCHUsageMode.UseExplicitOrSharedPCHs;
-		CppStandard = CppStandardVersion.Latest;
 		bEnableExceptions = true;
 
 		PublicDependencyModuleNames.Add("Core");
