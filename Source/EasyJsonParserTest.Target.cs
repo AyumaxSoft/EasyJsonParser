@@ -10,7 +10,6 @@ public class EasyJsonParserTestTarget : TargetRules
 		Type = TargetType.Game;
 		DefaultBuildSettings = BuildSettingsVersion.Latest;
 		IncludeOrderVersion = EngineIncludeOrderVersion.Latest;
-		CppStandard = CppStandardVersion.Latest;
 
 		ExtraModuleNames.Add("EasyJsonParserTest");
 	}

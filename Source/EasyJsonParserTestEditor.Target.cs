@@ -9,7 +9,6 @@ public class EasyJsonParserTestEditorTarget : TargetRules
 		Type = TargetType.Editor;
 		DefaultBuildSettings = BuildSettingsVersion.Latest;
 		IncludeOrderVersion = EngineIncludeOrderVersion.Latest;
-		CppStandard = CppStandardVersion.Latest;
 
 		ExtraModuleNames.Add("EasyJsonParserTest");
 	}

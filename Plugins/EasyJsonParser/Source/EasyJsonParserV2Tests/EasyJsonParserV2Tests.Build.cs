@@ -8,7 +8,6 @@ public class EasyJsonParserV2Tests : ModuleRules
 	{
 		PCHUsage = ModuleRules.PCHUsageMode.UseExplicitOrSharedPCHs;
 		
-		CppStandard = CppStandardVersion.Latest;
 		bEnableExceptions = true;
 		
 		PublicIncludePaths.AddRange(
