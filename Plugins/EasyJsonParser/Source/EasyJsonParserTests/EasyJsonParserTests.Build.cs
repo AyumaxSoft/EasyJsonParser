@@ -1,6 +1,6 @@
-// Copyright 2019 ayumax. All Rights Reserved.
+// // Copyright (c) 2020 ayuma_x. All rights reserved.
+// // Licensed under the MIT license. See LICENSE file in the project root for full license information.
 
-using System.IO;
 using UnrealBuildTool;
 
 public class EasyJsonParserTests : ModuleRules
@@ -8,11 +8,21 @@ public class EasyJsonParserTests : ModuleRules
 	public EasyJsonParserTests
 		(ReadOnlyTargetRules Target) : base(Target)
 	{
-		PCHUsage = ModuleRules.PCHUsageMode.UseExplicitOrSharedPCHs;
+		PCHUsage = PCHUsageMode.UseExplicitOrSharedPCHs;
+		// Relax some Clang enum-conversion related warnings which became stricter in UE5.7 CI environments
+		// These settings only affect toolchains that support the corresponding flags (primarily Clang/Apple/Linux)
+		CppCompileWarningSettings.ShadowVariableWarningLevel = WarningLevel.Warning;
+		CppCompileWarningSettings.EnumConversionWarningLevel = WarningLevel.Off; // -Wno-enum-conversion
+		CppCompileWarningSettings.ClangBitfieldEnumConversion = WarningLevel.Off; // -Wno-bitfield-enum-conversion
+		CppCompileWarningSettings.EnumEnumConversionWarningLevel = WarningLevel.Off; // -Wno-enum-enum-conversion
+		CppCompileWarningSettings.EnumFloatConversionWarningLevel = WarningLevel.Off; // -Wno-enum-float-conversion
+
+
+		// Enable exceptions for proper error handling
 		bEnableExceptions = true;
 
 		PublicDependencyModuleNames.AddRange(
-			new string[]
+			new[]
 			{
 				"Core",
 				"CoreUObject",
@@ -22,7 +32,7 @@ public class EasyJsonParserTests : ModuleRules
 		);
 
 		PrivateDependencyModuleNames.AddRange(
-			new string[]
+			new[]
 			{
 				"EasyJsonParser",
 				"AutomationController",
